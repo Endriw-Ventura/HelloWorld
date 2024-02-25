@@ -1,6 +1,5 @@
 import styles from "./Home.module.css";
-import Post from "components/Post";
-import Banner from "components/Banner";
+import PostCard from "components/PostCard";
 import posts from "data/posts.json";
 
 function Home() {
@@ -8,7 +7,7 @@ function Home() {
     <ul className={styles.posts}>
       {posts.map((post) => (
         <li key={post.id}>
-          <Post post={post} />
+          <PostCard post={post} />
         </li>
       ))}
     </ul>

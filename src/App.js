@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import DefaultPage from "./components/DefaultPage";
 import AboutMe from "pages/Aboutme";
+import Post from "pages/Post";
+import Notfound from "pages/Notfound";
 
 function App() {
   return (
@@ -14,7 +16,8 @@ function App() {
           <Route index element={<Home />} />
           <Route path="aboutme" element={<AboutMe />} />
         </Route>
-        <Route path="*" element={<div>404</div>} />
+        <Route path="posts/:id/*" element={<Post />} />
+        <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
