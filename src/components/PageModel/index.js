@@ -8,7 +8,7 @@ export default function PageModel({ photo, title, children }) {
         style={{ backgroundImage: `url(${photo})` }}
       ></div>
       <h2 className={styles.titulo}>{title}</h2>
-      <div className={styles.postContainer}>{children}</div>
+      <div className={styles.postConteudoContainer}>{children}</div>
     </article>
   );
 }
