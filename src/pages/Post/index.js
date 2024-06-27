@@ -5,10 +5,12 @@ import PageModel from "components/PageModel";
 import ReactMarkdown from "react-markdown";
 import Notfound from "pages/Notfound";
 import DefaultPage from "components/DefaultPage";
+import Recommendations from "components/Recommendations";
 
 export default function Post() {
   const params = useParams();
   const post = posts.find((post) => post.id == params.id);
+  const recommendations = posts.filter((post) => post.id != params.id);
   if (!post) {
     return <Notfound />;
   }
@@ -18,11 +20,17 @@ export default function Post() {
         <Route
           index
           element={
-            <PageModel photo={`/posts/${post.id}/capa.png`} title={post.titulo}>
-              <div className="post-markdown-container">
-                <ReactMarkdown>{post.texto}</ReactMarkdown>
-              </div>
-            </PageModel>
+            <>
+              <PageModel
+                photo={`/posts/${post.id}/capa.png`}
+                title={post.titulo}
+              >
+                <div className="post-markdown-container">
+                  <ReactMarkdown>{post.texto}</ReactMarkdown>
+                </div>
+              </PageModel>
+              <Recommendations posts={recommendations} />
+            </>
           }
         ></Route>
       </Route>

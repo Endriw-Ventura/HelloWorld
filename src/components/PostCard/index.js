@@ -9,7 +9,7 @@ function PostCard({ post }) {
       <div className={styles.post}>
         <img
           className={styles.capa}
-          src={`posts/${post.id}/capa.png`}
+          src={`/posts/${post.id}/capa.png`}
           alt="post image"
         ></img>
         <p className={styles.titulo}> {post.titulo} </p>

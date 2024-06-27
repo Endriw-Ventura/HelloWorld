@@ -4,6 +4,7 @@
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
   border-radius: 0px 0px 10px 10px;
   padding-bottom: 1.5rem;
+  margin: 18px 0;
   transition: transform 0.2s;
 }
 
